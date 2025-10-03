@@ -1,0 +1,40 @@
+using System;
+using System.Numerics;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                int q = int.Parse(Console.ReadLine());
+                
+                        for (int t = 0; t < q; t++)
+                                {
+                                            string s = Console.ReadLine();
+                                                        bool valid = false;
+                                                                    string first = "";
+                                                                    
+                                                                                // Try different starting lengths
+                                                                                            for (int len = 1; len <= s.Length / 2; len++)
+                                                                                                        {
+                                                                                                                        BigInteger start = BigInteger.Parse(s.Substring(0, len));
+                                                                                                                                        BigInteger num = start;
+                                                                                                                                                        string built = "";
+                                                                                                                                                        
+                                                                                                                                                                        while (built.Length < s.Length)
+                                                                                                                                                                                        {
+                                                                                                                                                                                                            built += num.ToString();
+                                                                                                                                                                                                                                num++;
+                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                if (built == s)
+                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                    valid = true;
+                                                                                                                                                                                                                                                                                                                        first = start.ToString();
+                                                                                                                                                                                                                                                                                                                                            break;
+                                                                                                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                                                    Console.WriteLine(valid ? $"YES {first}" : "NO");
+                                                                                                                                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                                                                                }
