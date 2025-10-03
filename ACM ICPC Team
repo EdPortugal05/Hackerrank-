@@ -1,0 +1,27 @@
+using System;
+using System.Linq;
+
+class Solution {
+    static void Main() {
+            var nm = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+                    int n = nm[0], m = nm[1];
+                            string[] topics = new string[n];
+                                    for (int i = 0; i < n; i++) topics[i] = Console.ReadLine();
+                                    
+                                            int maxTopics = 0, teamCount = 0;
+                                                    for (int i = 0; i < n; i++) {
+                                                                for (int j = i+1; j < n; j++) {
+                                                                                int count = 0;
+                                                                                                for (int k = 0; k < m; k++) {
+                                                                                                                    if (topics[i][k] == '1' || topics[j][k] == '1') count++;
+                                                                                                                                    }
+                                                                                                                                                    if (count > maxTopics) {
+                                                                                                                                                                        maxTopics = count;
+                                                                                                                                                                                            teamCount = 1;
+                                                                                                                                                                                                            } else if (count == maxTopics) teamCount++;
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                        Console.WriteLine(maxTopics);
+                                                                                                                                                                                                                                                Console.WriteLine(teamCount);
+                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                    }
