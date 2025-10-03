@@ -1,0 +1,24 @@
+using System;
+using System.Linq;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                string[] nm = Console.ReadLine().Split(' ');
+                        int n = int.Parse(nm[0]);
+                                int t = int.Parse(nm[1]);
+                                
+                                        int[] widths = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+                                        
+                                                for (int i = 0; i < t; i++)
+                                                        {
+                                                                    string[] query = Console.ReadLine().Split(' ');
+                                                                                int start = int.Parse(query[0]);
+                                                                                            int end = int.Parse(query[1]);
+                                                                                            
+                                                                                                        int min = widths.Skip(start).Take(end - start + 1).Min();
+                                                                                                                    Console.WriteLine(min);
+                                                                                                                            }
+                                                                                                                                }
+                                                                                                                                }
