@@ -1,0 +1,24 @@
+using System;
+using System.Linq;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                int n = int.Parse(Console.ReadLine());
+                        int[] arr = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+                        
+                                Array.Sort(arr);
+                                
+                                        int minDiff = int.MaxValue;
+                                        
+                                                // Find smallest difference
+                                                        for (int i = 1; i < n; i++)
+                                                                    minDiff = Math.Min(minDiff, arr[i] - arr[i - 1]);
+                                                                    
+                                                                            // Print pairs with that difference
+                                                                                    for (int i = 1; i < n; i++)
+                                                                                                if (arr[i] - arr[i - 1] == minDiff)
+                                                                                                                Console.Write(arr[i - 1] + " " + arr[i] + " ");
+                                                                                                                    }
+                                                                                                                    }
