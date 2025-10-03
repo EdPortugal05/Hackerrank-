@@ -1,0 +1,18 @@
+using System;
+using System.Linq;
+
+class Solution {
+    static void Main() {
+            int[] heights = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+                    string word = Console.ReadLine().Trim();
+                    
+                            int maxH = 0;
+                                    foreach(char c in word) {
+                                                int idx = c - 'a';
+                                                            if (heights[idx] > maxH) maxH = heights[idx];
+                                                                    }
+                                                                    
+                                                                            // area = width (word length) * max height
+                                                                                    Console.WriteLine(maxH * word.Length);
+                                                                                        }
+                                                                                        }
