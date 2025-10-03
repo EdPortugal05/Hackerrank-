@@ -1,0 +1,19 @@
+using System;
+
+class Solution
+{
+    static void Main()
+        {
+                long n = long.Parse(Console.ReadLine());
+                        long count = 1;
+                        
+                                // Count zeros in binary representation
+                                        while (n > 0)
+                                                {
+                                                            if ((n & 1) == 0) count *= 2;
+                                                                        n >>= 1;
+                                                                                }
+                                                                                
+                                                                                        Console.WriteLine(count);
+                                                                                            }
+                                                                                            }
