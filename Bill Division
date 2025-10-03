@@ -1,0 +1,22 @@
+using System;
+using System.Linq;
+
+class Solution {
+    static void Main() {
+            // read n and skipped index k
+                    var nk = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+                            int n = nk[0], k = nk[1];
+                            
+                                    // bill items
+                                            int[] bill = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+                                            
+                                                    // amount charged by Brian
+                                                            int charged = int.Parse(Console.ReadLine());
+                                                            
+                                                                    // compute Anna's fair share: sum minus the item she didn't eat, /2
+                                                                            int fair = (bill.Sum() - bill[k]) / 2;
+                                                                            
+                                                                                    if (charged == fair) Console.WriteLine("Bon Appetit");
+                                                                                            else Console.WriteLine(charged - fair);
+                                                                                                }
+                                                                                                }
