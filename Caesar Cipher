@@ -1,0 +1,42 @@
+using System;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                // Read input values
+                        int n = int.Parse(Console.ReadLine());   // length of the string (not used in logic)
+                                string s = Console.ReadLine();           // the string to encrypt
+                                        int k = int.Parse(Console.ReadLine());   // shift value
+                                        
+                                                // Reduce k so it stays within 0-25
+                                                        k = k % 26;
+                                                        
+                                                                // Create a character array for the encrypted result
+                                                                        char[] encrypted = new char[s.Length];
+                                                                        
+                                                                                for (int i = 0; i < s.Length; i++)
+                                                                                        {
+                                                                                                    char c = s[i];
+                                                                                                    
+                                                                                                                // If character is uppercase
+                                                                                                                            if (c >= 'A' && c <= 'Z')
+                                                                                                                                        {
+                                                                                                                                                        encrypted[i] = (char)('A' + (c - 'A' + k) % 26);
+                                                                                                                                                                    }
+                                                                                                                                                                                // If character is lowercase
+                                                                                                                                                                                            else if (c >= 'a' && c <= 'z')
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                                        encrypted[i] = (char)('a' + (c - 'a' + k) % 26);
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                // If character is not a letter, leave it unchanged
+                                                                                                                                                                                                                                                            else
+                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                                        encrypted[i] = c;
+                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                                    // Print the final encrypted string
+                                                                                                                                                                                                                                                                                                                            Console.WriteLine(new string(encrypted));
+                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                }
