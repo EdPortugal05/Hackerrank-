@@ -1,0 +1,25 @@
+using System;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                string[] input = Console.ReadLine().Split(' ');
+                        int p = int.Parse(input[0]); // initial price
+                                int d = int.Parse(input[1]); // decrement
+                                        int m = int.Parse(input[2]); // min price
+                                                int s = int.Parse(input[3]); // budget
+                                                
+                                                        int count = 0;
+                                                                int price = p;
+                                                                
+                                                                        while (s >= price)
+                                                                                {
+                                                                                            s -= price;
+                                                                                                        count++;
+                                                                                                                    price = Math.Max(price - d, m); // decrease but not below m
+                                                                                                                            }
+                                                                                                                            
+                                                                                                                                    Console.WriteLine(count);
+                                                                                                                                        }
+                                                                                                                                        }
