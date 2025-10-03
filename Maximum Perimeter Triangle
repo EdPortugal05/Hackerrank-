@@ -1,0 +1,30 @@
+using System;
+using System.Linq;
+
+class Solution
+{
+    static void Main()
+        {
+                int n = int.Parse(Console.ReadLine());
+                        int[] arr = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+                        
+                                Array.Sort(arr);
+                                
+                                        int a = -1, b = -1, c = -1;
+                                        
+                                                // Check triplets from largest to smallest
+                                                        for (int i = n - 1; i >= 2; i--)
+                                                                {
+                                                                            if (arr[i - 2] + arr[i - 1] > arr[i])
+                                                                                        {
+                                                                                                        a = arr[i - 2];
+                                                                                                                        b = arr[i - 1];
+                                                                                                                                        c = arr[i];
+                                                                                                                                                        break;
+                                                                                                                                                                    }
+                                                                                                                                                                            }
+                                                                                                                                                                            
+                                                                                                                                                                                    if (a == -1) Console.WriteLine("-1");
+                                                                                                                                                                                            else Console.WriteLine($"{a} {b} {c}");
+                                                                                                                                                                                                }
+                                                                                                                                                                                                }
