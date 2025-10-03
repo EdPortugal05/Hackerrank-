@@ -1,0 +1,37 @@
+using System;
+using System.Linq;
+
+class Solution
+{
+    static void Main()
+        {
+                string[] nk = Console.ReadLine().Split();
+                        int n = int.Parse(nk[0]);
+                                int k = int.Parse(nk[1]);
+                                
+                                        int luck = 0;
+                                                var important = new System.Collections.Generic.List<int>();
+                                                
+                                                        for (int i = 0; i < n; i++)
+                                                                {
+                                                                            string[] parts = Console.ReadLine().Split();
+                                                                                        int L = int.Parse(parts[0]);
+                                                                                                    int T = int.Parse(parts[1]);
+                                                                                                    
+                                                                                                                if (T == 1) important.Add(L); // important contest
+                                                                                                                            else luck += L;               // free contest, always lose
+                                                                                                                                    }
+                                                                                                                                    
+                                                                                                                                            // Sort important contests descending
+                                                                                                                                                    important.Sort((a, b) => b.CompareTo(a));
+                                                                                                                                                    
+                                                                                                                                                            // Lose top k, win the rest
+                                                                                                                                                                    for (int i = 0; i < important.Count; i++)
+                                                                                                                                                                            {
+                                                                                                                                                                                        if (i < k) luck += important[i];
+                                                                                                                                                                                                    else luck -= important[i];
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                            
+                                                                                                                                                                                                                    Console.WriteLine(luck);
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                        }
