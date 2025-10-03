@@ -1,0 +1,28 @@
+using System;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                int t = int.Parse(Console.ReadLine());
+                
+                        for (int i = 0; i < t; i++)
+                                {
+                                            string[] data = Console.ReadLine().Split(' ');
+                                                        int n = int.Parse(data[0]); // money
+                                                                    int c = int.Parse(data[1]); // cost per chocolate
+                                                                                int m = int.Parse(data[2]); // wrappers exchange
+                                                                                
+                                                                                            int chocolates = n / c; // initial chocolates
+                                                                                                        int wrappers = chocolates;
+                                                                                                        
+                                                                                                                    while (wrappers >= m)
+                                                                                                                                {
+                                                                                                                                                int extra = wrappers / m;
+                                                                                                                                                                chocolates += extra;
+                                                                                                                                                                                wrappers = wrappers % m + extra;
+                                                                                                                                                                                            }
+                                                                                                                                                                                            
+                                                                                                                                                                                                        Console.WriteLine(chocolates);
+                                                                                                                                                                                                                }
+                                                           
