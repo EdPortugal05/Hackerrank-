@@ -1,0 +1,38 @@
+using System;
+
+class Solution
+{
+    static void Main()
+        {
+                int t = int.Parse(Console.ReadLine());  // test cases
+                        for (int tc = 0; tc < t; tc++)
+                                {
+                                            int n = int.Parse(Console.ReadLine());
+                                                        string[] grid = new string[n];
+                                                        
+                                                                    // Sort each row alphabetically
+                                                                                for (int i = 0; i < n; i++)
+                                                                                            {
+                                                                                                            char[] row = Console.ReadLine().ToCharArray();
+                                                                                                                            Array.Sort(row);
+                                                                                                                                            grid[i] = new string(row);
+                                                                                                                                                        }
+                                                                                                                                                        
+                                                                                                                                                                    bool possible = true;
+                                                                                                                                                                    
+                                                                                                                                                                                // Check columns are sorted
+                                                                                                                                                                                            for (int col = 0; col < grid[0].Length; col++)
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                                        for (int row = 1; row < n; row++)
+                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                            if (grid[row][col] < grid[row - 1][col])
+                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                        possible = false;
+                                                                                                                                                                                                                                                                                                                                break;
+                                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                                                                    if (!possible) break;
+                                                                                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                            Console.WriteLine(possible ? "YES" : "NO");
+                                                                                                                                                                                                                                                                                                                                                                                                    
