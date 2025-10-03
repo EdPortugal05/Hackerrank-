@@ -1,0 +1,32 @@
+using System;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                int n = int.Parse(Console.ReadLine());
+                        char[,] grid = new char[n, n];
+                        
+                                for (int i = 0; i < n; i++)
+                                        {
+                                                    string line = Console.ReadLine();
+                                                                for (int j = 0; j < n; j++) grid[i, j] = line[j];
+                                                                        }
+                                                                        
+                                                                                for (int i = 1; i < n - 1; i++)
+                                                                                        {
+                                                                                                    for (int j = 1; j < n - 1; j++)
+                                                                                                                {
+                                                                                                                                char val = grid[i, j];
+                                                                                                                                                if (val > grid[i - 1, j] && val > grid[i + 1, j] && val > grid[i, j - 1] && val > grid[i, j + 1])
+                                                                                                                                                                    grid[i, j] = 'X';
+                                                                                                                                                                                }
+                                                                                                                                                                                        }
+                                                                                                                                                                                        
+                                                                                                                                                                                                for (int i = 0; i < n; i++)
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                                    for (int j = 0; j < n; j++) Console.Write(grid[i, j]);
+                                                                                                                                                                                                                                Console.WriteLine();
+                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                            }
