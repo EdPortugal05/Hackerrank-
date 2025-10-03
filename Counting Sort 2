@@ -1,0 +1,17 @@
+using System;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                int n = int.Parse(Console.ReadLine());
+                        string[] arrStr = Console.ReadLine().Split(' ');
+                                int[] arr = Array.ConvertAll(arrStr, int.Parse);
+                                
+                                        int[] count = new int[100];
+                                        
+                                                // Step 1: Count frequency of each number
+                                                        foreach (int num in arr)
+                                                                    count[num]++;
+                                                                    
+                                                                            // Step 2: 
