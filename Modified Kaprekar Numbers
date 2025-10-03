@@ -1,0 +1,30 @@
+using System;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                int p = int.Parse(Console.ReadLine());
+                        int q = int.Parse(Console.ReadLine());
+                                bool found = false;
+                                
+                                        for (long i = p; i <= q; i++)
+                                                {
+                                                            long sq = i * i; // square the number
+                                                                        string s = sq.ToString();
+                                                                                    string left = s.Substring(0, s.Length / 2); // left half
+                                                                                                string right = s.Substring(s.Length / 2);   // right half
+                                                                                                
+                                                                                                            // Convert empty parts to 0
+                                                                                                                        long l = left.Length == 0 ? 0 : long.Parse(left);
+                                                                                                                                    long r = right.Length == 0 ? 0 : long.Parse(right);
+                                                                                                                                    
+                                                                                                                                                if (l + r == i)
+                                                                                                                                                            {
+                                                                                                                                                                            Console.Write(i + " ");
+                                                                                                                                                                                            found = true;
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                                        if (!found) Console.WriteLine("INVALID RANGE");
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                            }
