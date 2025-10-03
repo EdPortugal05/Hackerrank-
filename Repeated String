@@ -1,0 +1,19 @@
+using System;
+
+class Solution {
+    static void Main() {
+            string s = Console.ReadLine();
+                    long n = long.Parse(Console.ReadLine());
+                    
+                            long countAInS = 0;
+                                    foreach (char c in s) if (c == 'a') countAInS++;
+                                    
+                                            long fullRepeats = n / s.Length;
+                                                    long remainder = n % s.Length;
+                                                    
+                                                            long result = countAInS * fullRepeats;
+                                                                    for (int i = 0; i < remainder; i++) if (s[i] == 'a') result++;
+                                                                            Console.WriteLine(result);
+                                                                                }
+                                                                                }    
+ 
