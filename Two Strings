@@ -1,0 +1,21 @@
+using System;
+using System.Linq;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                int q = int.Parse(Console.ReadLine());
+                
+                        for (int t = 0; t < q; t++)
+                                {
+                                            string s1 = Console.ReadLine();
+                                                        string s2 = Console.ReadLine();
+                                                        
+                                                                    // If any common character exists
+                                                                                bool common = s1.Intersect(s2).Any();
+                                                                                
+                                                                                            Console.WriteLine(common ? "YES" : "NO");
+                                                                                                    }
+                                                                                                        }
+                                                                                                        }
