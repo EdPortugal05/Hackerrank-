@@ -1,0 +1,19 @@
+using System;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                long t = long.Parse(Console.ReadLine());
+                        long cycle = 3;
+                        
+                                // Find which cycle time falls into
+                                        while (t > cycle)
+                                                {
+                                                            t -= cycle;
+                                                                        cycle *= 2;
+                                                                                }
+                                                                                
+                                                                                        Console.WriteLine(cycle - t + 1);
+                                                                                            }
+                                                                                            }
