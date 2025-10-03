@@ -1,0 +1,14 @@
+using System;
+
+class Solution {
+    static void Main() {
+            int n = int.Parse(Console.ReadLine());
+                    int p = int.Parse(Console.ReadLine());
+                    
+                            // turns from front = p/2
+                                    int fromFront = p / 2;
+                                            // turns from back = (n/2) - (p/2)
+                                                    int fromBack = n/2 - p/2;
+                                                            Console.WriteLine(Math.Min(fromFront, fromBack));
+                                                                }
+                                                                }
