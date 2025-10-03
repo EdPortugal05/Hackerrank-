@@ -1,0 +1,23 @@
+using System;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                // Step 1: Read input size
+                        int n = int.Parse(Console.ReadLine());
+                                string[] arrStr = Console.ReadLine().Split(' ');
+                                        int[] arr = Array.ConvertAll(arrStr, int.Parse);
+                                        
+                                                // Step 2: Apply XOR to all numbers
+                                                        int result = 0;
+                                                                foreach (int num in arr)
+                                                                        {
+                                                                                    // XOR accumulates: duplicates cancel out, leaving only the lonely number
+                                                                                                result ^= num;
+                                                                                                        }
+                                                                                                        
+                                                                                                                // Step 3: Output the lonely integer
+                                                                                                                        Console.WriteLine(result);
+                                                                                                                            }
+                                                                                                                            }
