@@ -1,0 +1,27 @@
+using System;
+using System.Linq;
+
+class Solution
+{
+    static void Main()
+        {
+                int n = int.Parse(Console.ReadLine());
+                        int[] w = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+                        
+                                Array.Sort(w);
+                                
+                                        int units = 1; // at least one unit needed
+                                                int baseWeight = w[0];
+                                                
+                                                        for (int i = 0; i < n; i++)
+                                                                {
+                                                                            if (w[i] > baseWeight + 4)
+                                                                                        {
+                                                                                                        units++;
+                                                                                                                        baseWeight = w[i];
+                                                                                                                                    }
+                                                                                                                                            }
+                                                                                                                                            
+                                                                                                                                                    Console.WriteLine(units);
+                                                                                                                                                        }
+                                                                                                                                                        }
