@@ -1,0 +1,16 @@
+using System;
+using System.Linq;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                string s = Console.ReadLine().ToLower();
+                
+                        // Check if all 26 letters exist
+                                bool pangram = Enumerable.Range(0, 26)
+                                                          .All(i => s.Contains((char)('a' + i)));
+                                                          
+                                                                  Console.WriteLine(pangram ? "pangram" : "not pangram");
+                                                                      }
+                                                                      }
