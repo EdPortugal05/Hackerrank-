@@ -1,0 +1,20 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+class Solution {
+    static void Main() {
+            int n = int.Parse(Console.ReadLine());
+                    int[] arr = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+                    
+                            var freq = new Dictionary<int,int>();
+                                    foreach (var a in arr) {
+                                                if (!freq.ContainsKey(a)) freq[a] = 0;
+                                                            freq[a]++;
+                                                                    }
+                                                                            int maxFreq = 0;
+                                                                                    foreach (var kv in freq) if (kv.Value > maxFreq) maxFreq = kv.Value;
+                                                                                    
+                                                                                            Console.WriteLine(n - maxFreq); // remove all others
+                                                                                                }
+                                                                                                }
