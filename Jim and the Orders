@@ -1,0 +1,23 @@
+using System;
+using System.Linq;
+
+class Solution
+{
+    static void Main()
+        {
+                int n = int.Parse(Console.ReadLine());
+                        var orders = new (int id, int time)[n];
+                        
+                                for (int i = 0; i < n; i++)
+                                        {
+                                                    string[] parts = Console.ReadLine().Split();
+                                                                int orderTime = int.Parse(parts[0]);
+                                                                            int prep = int.Parse(parts[1]);
+                                                                                        orders[i] = (i + 1, orderTime + prep);
+                                                                                                }
+                                                                                                
+                                                                                                        // Sort by delivery time, then by id
+                                                                                                                var sorted = orders.OrderBy(x => x.time).ThenBy(x => x.id);
+                                                                                                                        Console.WriteLine(string.Join(" ", sorted.Select(x => x.id)));
+                                                                                                                            }
+                                                                                                                            }
