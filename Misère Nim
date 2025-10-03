@@ -1,0 +1,27 @@
+using System;
+
+class Solution
+{
+    static void Main()
+        {
+                int g = int.Parse(Console.ReadLine());
+                        for (int t = 0; t < g; t++)
+                                {
+                                            int n = int.Parse(Console.ReadLine());
+                                                        int[] arr = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+                                                        
+                                                                    int xor = 0;
+                                                                                bool allOnes = true;
+                                                                                            foreach (int x in arr)
+                                                                                                        {
+                                                                                                                        xor ^= x;
+                                                                                                                                        if (x > 1) allOnes = false;
+                                                                                                                                                    }
+                                                                                                                                                    
+                                                                                                                                                                if (allOnes)
+                                                                                                                                                                                Console.WriteLine(n % 2 == 0 ? "First" : "Second");
+                                                                                                                                                                                            else
+                                                                                                                                                                                                            Console.WriteLine(xor == 0 ? "Second" : "First");
+                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                        }
