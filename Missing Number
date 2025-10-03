@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                // Step 1: Read the first array
+                        int n = int.Parse(Console.ReadLine());
+                                string[] arrStr1 = Console.ReadLine().Split(' ');
+                                        int[] arr1 = Array.ConvertAll(arrStr1, int.Parse);
+                                        
+                                                // Step 2: Read the second array
+                                                        int m = int.Parse(Console.ReadLine());
+                                                                string[] arrStr2 = Console.ReadLine().Split(' ');
+                                                                        int[] arr2 = Array.ConvertAll(arrStr2, int.Parse);
+                                                                        
+                                                                                // Step 3: Use dictionary to count occurrences
+                                                                                        Dictionary<int, int> count1 = new Dictionary<int, int>();
+                                                                                                Dictionary<int, int> count2 = new Dictionary<int, int>();
+                                                                                                
+                                                                                                        foreach (int num in arr1)
+                                                                                                                {
+                                                                                                                            if (!count1.ContainsKey(num)) count1[num] = 0;
+                                                                                                                                        count1[num]++;
+                                                                                                                                                }
+                                                                                                                                                
+                                                                                                                                                        foreach (int num in arr2)
+                                                                                                                                                                {
+                                                                                                                                                                            if (!count2.ContainsKey(num)) count2[num] = 0;
+                                                                                                                                                                                        count2[num]++;
+                                                                                                                                                                                                }
+                                                                                                                                                                                                
+                                                                                                                                                                                                        // Step 4: Compare counts
+                                                                                                                                                                                                                List<int> missing = new List<int>();
+                                                                                                                                                                                                                        foreach (var kvp in count2)
+                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                            int num = kvp.Key;
+                                                                                                                                                                                                                                                        int freq2 = kvp.Value;
+                                                                                                                                                                                                                                                                    int freq1 = count1.ContainsKey(num) ? count1[num] : 0;
+                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                if (freq1 != freq2)
+                                                                                                                                                                                                                                                                                                missing.Add(num);
+                                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                // Step 5: Print sorted result
+                                                                                                                                                                                                                                                                                                                        missing.Sort();
+                                                                                                                                                                                                                                                                                                                                Console.WriteLine(string.Join(" ", missing));
+                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                    }
