@@ -1,0 +1,20 @@
+using System;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                int n = int.Parse(Console.ReadLine());          // Step 1: Read size
+                        string[] arrStr = Console.ReadLine().Split(' ');
+                                int[] arr = Array.ConvertAll(arrStr, int.Parse);
+                                
+                                        // Step 2: Sort the array
+                                                Array.Sort(arr);
+                                                
+                                                        // Step 3: Median is middle index
+                                                                int median = arr[n / 2];
+                                                                
+                                                                        Console.WriteLine(median);
+                                                                            }
+                                                                            }
+
