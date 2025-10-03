@@ -1,0 +1,22 @@
+using System;
+using System.Linq;
+
+class Solution {
+    static void Main() {
+            string[] first = Console.ReadLine().Split(' ');
+                    int n = int.Parse(first[0]);
+                            int k = int.Parse(first[1]);
+                            
+                                    int[] clouds = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+                                    
+                                            int energy = 100;
+                                                    int pos = 0;
+                                                            do {
+                                                                        pos = (pos + k) % n;
+                                                                                    energy -= 1; // jump costs 1
+                                                                                                if (clouds[pos] == 1) energy -= 2; // thundercloud costs extra 2
+                                                                                                        } while (pos != 0);
+                                                                                                        
+                                                                                                                Console.WriteLine(energy);
+                                                                                                                    }
+                                                                                                                    }
