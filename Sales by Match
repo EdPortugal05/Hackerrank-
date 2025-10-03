@@ -1,0 +1,20 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+class Solution {
+    static void Main() {
+            int n = int.Parse(Console.ReadLine());
+                    int[] socks = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+                    
+                            var freq = new Dictionary<int,int>();
+                                    foreach(var s in socks) {
+                                                if (!freq.ContainsKey(s)) freq[s] = 0;
+                                                            freq[s]++;
+                                                                    }
+                                                                    
+                                                                            int pairs = 0;
+                                                                                    foreach(var kv in freq) pairs += kv.Value / 2;
+                                                                                            Console.WriteLine(pairs);
+                                                                                                }
+                                                                                                }
