@@ -1,0 +1,27 @@
+using System;
+using System.Linq;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                // Step 1: Read input (number of cupcakes not actually needed except for validation)
+                        int n = int.Parse(Console.ReadLine());
+                                string[] arrStr = Console.ReadLine().Split(' ');
+                                        long[] calories = Array.ConvertAll(arrStr, long.Parse);
+                                        
+                                                // Step 2: Sort in descending order so we eat the largest cupcakes first
+                                                        Array.Sort(calories);
+                                                                Array.Reverse(calories);
+                                                                
+                                                                        long totalCalories = 0;
+                                                                        
+                                                                                // Step 3: Calculate using formula calorie * (2^i)
+                                                                                        for (int i = 0; i < calories.Length; i++)
+                                                                                                {
+                                                                                                            totalCalories += calories[i] * (1L << i); // (1L << i) = 2^i
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                            Console.WriteLine(totalCalories);
+                                                                                                                                }
+                                                                                                                                }
