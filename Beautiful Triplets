@@ -1,0 +1,22 @@
+using System;
+using System.Linq;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                string[] nd = Console.ReadLine().Split(' ');
+                        int n = int.Parse(nd[0]);
+                                int d = int.Parse(nd[1]);
+                                        int[] arr = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+                                        
+                                                int count = 0;
+                                                        for (int i = 0; i < n; i++)
+                                                                {
+                                                                            if (arr.Contains(arr[i] + d) && arr.Contains(arr[i] + 2 * d))
+                                                                                            count++;
+                                                                                                    }
+                                                                                                    
+                                                                                                            Console.WriteLine(count);
+                                                                                                                }
+                                                                                                                }
