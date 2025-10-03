@@ -1,0 +1,25 @@
+using System;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                int n = int.Parse(Console.ReadLine());
+                        string[] arrStr = Console.ReadLine().Split(' ');
+                                int[] arr = Array.ConvertAll(arrStr, int.Parse);
+                                
+                                        Array.Sort(arr); // sort the array
+                                        
+                                                int minDiff = int.MaxValue;
+                                                
+                                                        // Compare only consecutive pairs
+                                                                for (int i = 1; i < arr.Length; i++)
+                                                                        {
+                                                                                    int diff = arr[i] - arr[i - 1];
+                                                                                                if (diff < minDiff)
+                                                                                                                minDiff = diff;
+                                                                                                                        }
+                                                                                                                        
+                                                                                                                                Console.WriteLine(minDiff);
+                                                                                                                                    }
+                                                                                                                                    }
