@@ -1,0 +1,17 @@
+using System;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                int n = int.Parse(Console.ReadLine());
+                        int[] arr = Array.ConvertAll(Console.ReadLine().Split(' '), int.Parse);
+                        
+                                int[] count = new int[100]; // frequency array
+                                
+                                        foreach (int x in arr)
+                                                    count[x]++;
+                                                    
+                                                            Console.WriteLine(string.Join(" ", count));
+                                                                }
+                                                                }
