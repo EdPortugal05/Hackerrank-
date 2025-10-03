@@ -1,0 +1,26 @@
+using System;
+
+class Solution {
+    static void Main() {
+            string s = Console.ReadLine();
+                    string t = Console.ReadLine();
+                            int k = int.Parse(Console.ReadLine());
+                            
+                                    // find common prefix length
+                                            int common = 0;
+                                                    int minLen = Math.Min(s.Length, t.Length);
+                                                            while (common < minLen && s[common] == t[common]) common++;
+                                                            
+                                                                    // ops needed: delete remaining from s + append remaining from t
+                                                                            int opsNeeded = (s.Length - common) + (t.Length - common);
+                                                                            
+                                                                                    if (opsNeeded <= k && (k - opsNeeded) % 2 == 0) {
+                                                                                                Console.WriteLine("Yes");
+                                                                                                        } else if (k >= s.Length + t.Length) {
+                                                                                                                    // can delete whole s and rebuild t with leftover redundant deletes allowed
+                                                                                                                                Console.WriteLine("Yes");
+                                                                                                                                        } else {
+                                                                                                                                                    Console.WriteLine("No");
+                                                                                                                                                            }
+                                                                                                                                                                }
+                                                                                                                                                                }
