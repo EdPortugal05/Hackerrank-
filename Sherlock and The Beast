@@ -1,0 +1,31 @@
+using System;
+
+class Solution
+{
+    static void Main()
+        {
+                int t = int.Parse(Console.ReadLine());
+                
+                        for (int tc = 0; tc < t; tc++)
+                                {
+                                            int n = int.Parse(Console.ReadLine());
+                                                        int fives = n;
+                                                        
+                                                                    // Reduce number of 5's until divisible by 3
+                                                                                while (fives % 3 != 0 && fives >= 0)
+                                                                                            {
+                                                                                                            fives -= 5;
+                                                                                                                        }
+                                                                                                                        
+                                                                                                                                    if (fives < 0)
+                                                                                                                                                {
+                                                                                                                                                                Console.WriteLine("-1");
+                                                                                                                                                                            }
+                                                                                                                                                                                        else
+                                                                                                                                                                                                    {
+                                                                                                                                                                                                                    // Print fives number of '5' followed by (n - fives) number of '3'
+                                                                                                                                                                                                                                    Console.WriteLine(new string('5', fives) + new string('3', n - fives));
+                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                            }
