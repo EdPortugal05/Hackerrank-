@@ -1,0 +1,28 @@
+using System;
+using System.Linq;
+
+class Solution
+{
+    static void Main()
+        {
+                string[] nk = Console.ReadLine().Split();
+                        int n = int.Parse(nk[0]);
+                                int k = int.Parse(nk[1]);
+                                
+                                        int[] prices = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+                                                Array.Sort(prices);
+                                                
+                                                        int count = 0, sum = 0;
+                                                                foreach (int p in prices)
+                                                                        {
+                                                                                    if (sum + p <= k)
+                                                                                                {
+                                                                                                                sum += p;
+                                                                                                                                count++;
+                                                                                                                                            }
+                                                                                                                                                        else break;
+                                                                                                                                                                }
+                                                                                                                                                                
+                                                                                                                                                                        Console.WriteLine(count);
+                                                                                                                                                                            }
+                                                                                                                                                                            }
