@@ -1,0 +1,28 @@
+using System;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                int t = int.Parse(Console.ReadLine()); // number of test cases
+                
+                        for (int i = 0; i < t; i++)
+                                {
+                                            // Read number of black and white gifts
+                                                        string[] bw = Console.ReadLine().Split(' ');
+                                                                    long b = long.Parse(bw[0]); 
+                                                                                long w = long.Parse(bw[1]);
+                                                                                
+                                                                                            // Read cost of black gift, white gift, and conversion
+                                                                                                        string[] costs = Console.ReadLine().Split(' ');
+                                                                                                                    long bc = long.Parse(costs[0]); 
+                                                                                                                                long wc = long.Parse(costs[1]); 
+                                                                                                                                            long z = long.Parse(costs[2]);
+                                                                                                                                            
+                                                                                                                                                        // Check if converting is cheaper than direct buy
+                                                                                                                                                                    long minCost = (b * Math.Min(bc, wc + z)) + (w * Math.Min(wc, bc + z));
+                                                                                                                                                                    
+                                                                                                                                                                                Console.WriteLine(minCost);
+                                                                                                                                                                                        }
+                                                                                                                                                                                            }
+                                                                                                                                                                                            }
