@@ -1,0 +1,30 @@
+using System;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                string s1 = Console.ReadLine();
+                        string s2 = Console.ReadLine();
+                        
+                                int[] count1 = new int[26];
+                                        int[] count2 = new int[26];
+                                        
+                                                // Count characters in s1
+                                                        foreach (char c in s1)
+                                                                    count1[c - 'a']++;
+                                                                    
+                                                                            // Count characters in s2
+                                                                                    foreach (char c in s2)
+                                                                                                count2[c - 'a']++;
+                                                                                                
+                                                                                                        // Compute deletions
+                                                                                                                int deletions = 0;
+                                                                                                                        for (int i = 0; i < 26; i++)
+                                                                                                                                {
+                                                                                                                                            deletions += Math.Abs(count1[i] - count2[i]);
+                                                                                                                                                    }
+                                                                                                                                                    
+                                                                                                                                                            Console.WriteLine(deletions);
+                                                                                                                                                                }
+                                                                                                                                                                }
