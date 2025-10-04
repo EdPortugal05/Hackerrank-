@@ -1,0 +1,26 @@
+using System;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                int n = int.Parse(Console.ReadLine());
+                        string[] arrStr = Console.ReadLine().Split(' ');
+                                int[] arr = Array.ConvertAll(arrStr, int.Parse);
+                                
+                                        int value = arr[n - 1]; // The element to insert
+                                                int i = n - 2;          // Start comparing from second last element
+                                                
+                                                        // Step 1: Shift elements to the right until we find correct place for value
+                                                                while (i >= 0 && arr[i] > value)
+                                                                        {
+                                                                                    arr[i + 1] = arr[i]; // Shift to the right
+                                                                                                Console.WriteLine(string.Join(" ", arr));
+                                                                                                            i--;
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                            // Step 2: Place value in its correct spot
+                                                                                                                                    arr[i + 1] = value;
+                                                                                                                                            Console.WriteLine(string.Join(" ", arr));
+                                                                                                                                                }
+                                                                                                                                                }
