@@ -1,0 +1,28 @@
+using System;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                string s = Console.ReadLine();
+                        string pattern = "SOS";
+                        
+                                int changes = 0;
+                                
+                                        // Step 1: Loop through the string
+                                                for (int i = 0; i < s.Length; i++)
+                                                        {
+                                                                    // Expected character is from pattern, repeated every 3 letters
+                                                                                char expected = pattern[i % 3];
+                                                                                
+                                                                                            // Step 2: If actual != expected, count an alteration
+                                                                                                        if (s[i] != expected)
+                                                                                                                    {
+                                                                                                                                    changes++;
+                                                                                                                                                }
+                                                                                                                                                        }
+                                                                                                                                                        
+                                                                                                                                                                // Step 3: Print total number of altered characters
+                                                                                                                                                                        Console.WriteLine(changes);
+                                                                                                                                                                            }
+                                                                                                                                                                            }
