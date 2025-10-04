@@ -1,0 +1,31 @@
+using System;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                int n = int.Parse(Console.ReadLine());
+                        string[] arrStr = Console.ReadLine().Split(' ');
+                                int[] arr = Array.ConvertAll(arrStr, int.Parse);
+                                
+                                        // Step 1: Loop from the 2nd element onwards
+                                                for (int i = 1; i < n; i++)
+                                                        {
+                                                                    int value = arr[i];
+                                                                                int j = i - 1;
+                                                                                
+                                                                                            // Step 2: Shift elements larger than 'value' one position to the right
+                                                                                                        while (j >= 0 && arr[j] > value)
+                                                                                                                    {
+                                                                                                                                    arr[j + 1] = arr[j];
+                                                                                                                                                    j--;
+                                                                                                                                                                }
+                                                                                                                                                                
+                                                                                                                                                                            // Step 3: Place 'value' at the correct position
+                                                                                                                                                                                        arr[j + 1] = value;
+                                                                                                                                                                                        
+                                                                                                                                                                                                    // Print current state of array
+                                                                                                                                                                                                                Console.WriteLine(string.Join(" ", arr));
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                            }
