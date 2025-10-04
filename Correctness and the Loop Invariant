@@ -1,0 +1,36 @@
+using System;
+
+class Solution
+{
+    static void InsertionSort(int[] arr)
+        {
+                int n = arr.Length;
+                
+                        // Outer loop runs for each element
+                                for (int i = 1; i < n; i++)
+                                        {
+                                                    int value = arr[i];
+                                                                int j = i - 1;
+                                                                
+                                                                            // Shift elements until correct place is found
+                                                                                        while (j >= 0 && arr[j] > value)
+                                                                                                    {
+                                                                                                                    arr[j + 1] = arr[j];
+                                                                                                                                    j--;
+                                                                                                                                                }
+                                                                                                                                                            arr[j + 1] = value;
+                                                                                                                                                                    }
+                                                                                                                                                                    
+                                                                                                                                                                            // Print final sorted array
+                                                                                                                                                                                    Console.WriteLine(string.Join(" ", arr));
+                                                                                                                                                                                        }
+                                                                                                                                                                                        
+                                                                                                                                                                                            static void Main(string[] args)
+                                                                                                                                                                                                {
+                                                                                                                                                                                                        int n = int.Parse(Console.ReadLine());
+                                                                                                                                                                                                                string[] arrStr = Console.ReadLine().Split(' ');
+                                                                                                                                                                                                                        int[] arr = Array.ConvertAll(arrStr, int.Parse);
+                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                InsertionSort(arr);
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                    }
