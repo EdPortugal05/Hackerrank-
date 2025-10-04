@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                int n = int.Parse(Console.ReadLine());
+                        List<string> numbers = new List<string>();
+                        
+                                // Step 1: Read all numbers as strings
+                                        for (int i = 0; i < n; i++)
+                                                {
+                                                            numbers.Add(Console.ReadLine());
+                                                                    }
+                                                                    
+                                                                            // Step 2: Sort using custom rules
+                                                                                    numbers.Sort((a, b) =>
+                                                                                            {
+                                                                                                        // First: shorter number is smaller
+                                                                                                                    if (a.Length != b.Length)
+                                                                                                                                    return a.Length.CompareTo(b.Length);
+                                                                                                                                    
+                                                                                                                                                // Second: if same length, compare lexicographically
+                                                                                                                                                            return string.Compare(a, b, StringComparison.Ordinal);
+                                                                                                                                                                    });
+                                                                                                                                                                    
+                                                                                                                                                                            // Step 3: Print sorted numbers
+                                                                                                                                                                                    foreach (string num in numbers)
+                                                                                                                                                                                                Console.WriteLine(num);
+                                                                                                                                                                                                    }
+                                                                                                                                                                                                    }
