@@ -1,0 +1,44 @@
+using System;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                int q = int.Parse(Console.ReadLine()); // number of test cases
+                
+                        for (int t = 0; t < q; t++)
+                                {
+                                            string s = Console.ReadLine();
+                                            
+                                                        if (s.Length % 2 != 0)
+                                                                    {
+                                                                                    Console.WriteLine(-1); // Cannot split evenly
+                                                                                                    continue;
+                                                                                                                }
+                                                                                                                
+                                                                                                                            int mid = s.Length / 2;
+                                                                                                                                        string left = s.Substring(0, mid);
+                                                                                                                                                    string right = s.Substring(mid);
+                                                                                                                                                    
+                                                                                                                                                                int[] count = new int[26];
+                                                                                                                                                                
+                                                                                                                                                                            // Count characters in left
+                                                                                                                                                                                        foreach (char c in left)
+                                                                                                                                                                                                        count[c - 'a']++;
+                                                                                                                                                                                                        
+                                                                                                                                                                                                                    // Subtract characters found in right
+                                                                                                                                                                                                                                foreach (char c in right)
+                                                                                                                                                                                                                                                count[c - 'a']--;
+                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                            // Sum positive differences
+                                                                                                                                                                                                                                                                        int changes = 0;
+                                                                                                                                                                                                                                                                                    foreach (int val in count)
+                                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                                if (val > 0)
+                                                                                                                                                                                                                                                                                                                                    changes += val;
+                                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                            Console.WriteLine(changes);
+                                                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                                                                                                        }
