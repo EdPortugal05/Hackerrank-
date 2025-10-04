@@ -1,0 +1,27 @@
+using System;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                // Step 1: Read the value we want to find
+                        int V = int.Parse(Console.ReadLine());
+                        
+                                // Step 2: Read size of the array
+                                        int n = int.Parse(Console.ReadLine());
+                                        
+                                                // Step 3: Read the array as integers
+                                                        string[] arrStr = Console.ReadLine().Split(' ');
+                                                                int[] arr = Array.ConvertAll(arrStr, int.Parse);
+                                                                
+                                                                        // Step 4: Scan through the array until we find V
+                                                                                for (int i = 0; i < n; i++)
+                                                                                        {
+                                                                                                    if (arr[i] == V)
+                                                                                                                {
+                                                                                                                                Console.WriteLine(i);
+                                                                                                                                                break; // Stop once found
+                                                                                                                                                            }
+                                                                                                                                                                    }
+                                                                                                                                                                        }
+                                                                                                                                                                        }
