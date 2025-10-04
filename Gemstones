@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                int n = int.Parse(Console.ReadLine()); // number of rocks
+                
+                        // Step 1: Start with the set of minerals in the first rock
+                                HashSet<char> common = new HashSet<char>(Console.ReadLine());
+                                
+                                        // Step 2: Intersect with the minerals of each subsequent rock
+                                                for (int i = 1; i < n; i++)
+                                                        {
+                                                                    string rock = Console.ReadLine();
+                                                                                HashSet<char> current = new HashSet<char>(rock);
+                                                                                
+                                                                                            // Retain only those minerals present in both sets
+                                                                                                        common.IntersectWith(current);
+                                                                                                                }
+                                                                                                                
+                                                                                                                        // Step 3: The remaining set size = minerals found in all rocks
+                                                                                                                                Console.WriteLine(common.Count);
+                                                                                                                                    }
+                                                                                                                                    }
