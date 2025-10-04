@@ -1,0 +1,24 @@
+using System;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                int n = int.Parse(Console.ReadLine()); // length of string (not really needed)
+                        string s = Console.ReadLine();
+                        
+                                int count = 0;
+                                
+                                        // Step 1: Walk through the string looking for "010"
+                                                for (int i = 0; i <= s.Length - 3; i++)
+                                                        {
+                                                                    if (s.Substring(i, 3) == "010")
+                                                                                {
+                                                                                                count++;   // One replacement needed
+                                                                                                                i += 2;    // Skip ahead because we "fixed" this pattern
+                                                                                                                            }
+                                                                                                                                    }
+                                                                                                                                    
+                                                                                                                                            Console.WriteLine(count);
+                                                                                                                                                }
+                                                                                                                                                }
