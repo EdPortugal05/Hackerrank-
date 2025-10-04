@@ -1,0 +1,31 @@
+using System;
+
+class Solution
+{
+    static void Main(string[] args)
+        {
+                int q = int.Parse(Console.ReadLine());
+                
+                        for (int t = 0; t < q; t++)
+                                {
+                                            string s = Console.ReadLine();
+                                            
+                                                        int operations = 0;
+                                                        
+                                                                    // Step 1: Compare letters from both ends toward the center
+                                                                                int left = 0;
+                                                                                            int right = s.Length - 1;
+                                                                                            
+                                                                                                        while (left < right)
+                                                                                                                    {
+                                                                                                                                    // Difference in ASCII values = number of steps needed
+                                                                                                                                                    operations += Math.Abs(s[left] - s[right]);
+                                                                                                                                                    
+                                                                                                                                                                    left++;
+                                                                                                                                                                                    right--;
+                                                                                                                                                                                                }
+                                                                                                                                                                                                
+                                                                                                                                                                                                            Console.WriteLine(operations);
+                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                        }
